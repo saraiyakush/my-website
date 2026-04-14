@@ -13,24 +13,22 @@ const posts = (await getCollection('blog'))
 
 <BaseLayout title="Kush Saraiya">
   <div class="home-intro">
-    <h1>Engineer. Architect. Mentor.</h1>
-    <p class="tagline">Judgment over hype, trade-offs over trends.</p>
-    <p>
-      17+ years of building and guiding software systems. I help teams design
-      systems that scale — technically, organisationally, and ethically.
-    </p>
+    <h1>Judgment over hype.<br>Trade-offs over trends.</h1>
+    <p class="hero-sub">Engineer · Architect · Mentor · 17+ years in software</p>
   </div>
 
   <div class="writing-section">
-    <h2>Recent writing</h2>
+    <h2>Latest articles</h2>
     <ul class="post-list">
       {posts.map(post => (
         <li>
           <a href={`/blog/${post.id.replace(/\.md$/, '')}`}>
             <span>{post.data.title}</span>
             {post.data.pubDatetime && (
-              <span class="post-year">
-                {new Date(post.data.pubDatetime).getFullYear()}
+              <span class="post-date">
+                {new Date(post.data.pubDatetime).toLocaleDateString('en-GB', {
+                  month: 'long', year: 'numeric'
+                })}
               </span>
             )}
           </a>
