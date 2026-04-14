@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => {
+    const dateA = a.data.pubDatetime ? new Date(a.data.pubDatetime).getTime() : 0;
+    const dateB = b.data.pubDatetime ? new Date(b.data.pubDatetime).getTime() : 0;
+    return dateB - dateA;
+  });
+
+const byYear = posts.reduce((acc, post) => {
+  const year = post.data.pubDatetime
+    ? new Date(post.data.pubDatetime).getFullYear().toString()
+    : 'Undated';
+  if (!acc[year]) acc[year] = [];
+  acc[year].push(post);
+  return acc;
+}, {});
+
+const years = Object.keys(byYear).sort((a, b) => Number(b) - Number(a));
+---
+
+<BaseLayout title="Writing">
+  <h1>Writing</h1>
+  <p>Thoughts on software design, engineering practices, career growth, and life skills.</p>
+
+  {years.map(year => (
+    <div class="writing-year">
+      <h2>{year}</h2>
+      <ul class="post-list">
+        {byYear[year].map(post => (
+          <li>
+            <a href={`/blog/${post.id.replace(/\.md$/, '')}`}>
+              <span>{post.data.title}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</BaseLayout>
