@@ -1,10 +1,10 @@
 ---
 title: "Building a low-maintenance software"
+description: "Why do simple fixes take so long — and why do they often involve multiple teams? This piece explores how design decisions made during development quietly drive long-term maintenance cost, and how a shift in thinking can lead to more resilient, low-maintenance systems."
 pubDatetime: "2022-08-04"
+banner: "/images/low-maintenance-unsplash.jpg"
 tags: ["Software Development", "Software Maintenance"]
 ---
-
-![](/images/low-maintenance-unsplash.jpg)
 
 Most product and engineering teams have come across these questions:
 

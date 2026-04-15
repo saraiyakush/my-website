@@ -26,12 +26,15 @@ const posts = (await getCollection('blog'))
             <span>{post.data.title}</span>
             {post.data.pubDatetime && (
               <span class="post-date">
-                {new Date(post.data.pubDatetime).toLocaleDateString('en-GB', {
-                  month: 'long', year: 'numeric'
+                {new Date(post.data.pubDatetime).toLocaleDateString('en-US', {
+                  month: 'short', year: 'numeric', day: 'numeric'
                 })}
               </span>
             )}
           </a>
+          {post.data.description && (
+            <p class="post-desc">{post.data.description}</p>
+          )}
         </li>
       ))}
     </ul>

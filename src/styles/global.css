@@ -174,6 +174,19 @@ footer {
   flex-shrink: 0;
 }
 
+.post-desc {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  margin-top: -0.4rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.post-banner {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
 /* --- Writing list (home + writing page) --- */
 .writing-section h2,
 .writing-year h2 {

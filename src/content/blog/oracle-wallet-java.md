@@ -1,10 +1,10 @@
 ---
 title: "How to use Oracle wallet inside a Java program"
 pubDatetime: "2020-07-02"
+description: "A step-by-step guide on configuring Oracle wallet in a Java program."
+banner: "/images/oracle-wallet-java-unsplash.jpg"
 tags: ["Software Development", "Software Maintenance"]
 ---
-
-![](/images/oracle-wallet-java-unsplash.jpg)
 
 Before we get into what it takes for a Java program to make database connection using Oracle wallet, let's first see how we make a connection without a wallet.
 
