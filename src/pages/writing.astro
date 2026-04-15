@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { getReadingTime } from '../utils/readingTime';
 
 const posts = (await getCollection('blog')).sort((a, b) => {
   const dateA = a.data.pubDatetime ? new Date(a.data.pubDatetime).getTime() : 0;
@@ -32,31 +33,35 @@ const years = Object.keys(byYear).sort((a, b) => Number(b) - Number(a));
       <div class="writing-year">
         <h2>{year}</h2>
         <ul class="post-list">
-          {byYear[year].map((post) => (
-            <li>
-              <a
-                href={`/blog/${post.id.replace(/\.md$/, '')}`}
-                class="post-link"
-              >
-                <div class="post-row">
-                  <span>{post.data.title}</span>
-                  <span class="post-date">
-                    {new Date(post.data.pubDatetime).toLocaleDateString(
-                      'en-US',
-                      {
-                        month: 'short',
-                        year: 'numeric',
-                        day: 'numeric'
-                      }
-                    )}
-                  </span>
-                </div>
-                {post.data.description && (
-                  <p class="post-desc">{post.data.description}</p>
-                )}
-              </a>
-            </li>
-          ))}
+          {byYear[year].map((post) => {
+            const readingTime = getReadingTime(post.body);
+            return (
+              <li>
+                <a
+                  href={`/blog/${post.id.replace(/\.md$/, '')}`}
+                  class="post-link"
+                >
+                  <div class="post-row">
+                    <span>{post.data.title}</span>
+                    <span class="post-date">
+                      {new Date(post.data.pubDatetime).toLocaleDateString(
+                        'en-US',
+                        {
+                          month: 'short',
+                          year: 'numeric',
+                          day: 'numeric'
+                        }
+                      )}{' '}
+                      · {readingTime} min read
+                    </span>
+                  </div>
+                  {post.data.description && (
+                    <p class="post-desc">{post.data.description}</p>
+                  )}
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
     ))
