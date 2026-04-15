@@ -5,22 +5,31 @@
 
 /* --- Tokens --- */
 :root {
-  --font-ui:    'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-ui: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   --font-prose: 'Source Serif 4', Georgia, serif;
 
-  --color-bg:      #fafaf9;
-  --color-text:    #1f2933;
-  --color-muted:   #57606a;
-  --color-border:  #e1e4e8;
-  --color-accent:  #c2622a;
+  --color-bg: #fafaf9;
+  --color-text: #1f2933;
+  --color-muted: #57606a;
+  --color-border: #e1e4e8;
+  --color-accent: #c2622a;
 
   --width-content: 700px;
-  --space-page:    1.5rem;
+  --space-page: 1.5rem;
 }
 
 /* --- Reset --- */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-img { display: block; max-width: 100%; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
 
 /* --- Base --- */
 @media (max-width: 480px) {
@@ -55,7 +64,10 @@ body {
 }
 
 /* --- Global typography defaults --- */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-ui);
   font-weight: 700;
   color: var(--color-accent);
@@ -63,23 +75,36 @@ h1, h2, h3, h4 {
   margin-bottom: 0.75rem;
 }
 
-h1 { font-size: 1.75rem; }
-h2 { font-size: 1.25rem; margin-top: 2rem; }
-h3 { font-size: 1.0625rem; margin-top: 1.5rem; }
+h1 {
+  font-size: 1.75rem;
+}
+h2 {
+  font-size: 1.25rem;
+  margin-top: 2rem;
+}
+h3 {
+  font-size: 1.0625rem;
+  margin-top: 1.5rem;
+}
 
 p {
   margin-bottom: 1.25rem;
   line-height: 1.75;
 }
 
-ul, ol {
+ul,
+ol {
   padding-left: 1.5rem;
   margin-bottom: 1.25rem;
 }
 
-li { margin-bottom: 0.4rem; }
+li {
+  margin-bottom: 0.4rem;
+}
 
-ul li::marker { color: var(--color-accent); }
+ul li::marker {
+  color: var(--color-accent);
+}
 
 hr {
   border: none;
@@ -124,7 +149,7 @@ nav ul a {
 }
 
 nav ul a:hover,
-nav ul a[aria-current="page"] {
+nav ul a[aria-current='page'] {
   color: var(--color-muted);
 }
 
@@ -244,7 +269,9 @@ footer {
   text-decoration: none;
 }
 
-.all-writing-link:hover { opacity: 0.8; }
+.all-writing-link:hover {
+  opacity: 0.8;
+}
 
 /* --- Writing page --- */
 .writing-year {
@@ -280,7 +307,9 @@ footer {
   margin-bottom: 2rem;
 }
 
-.back-link:hover { color: var(--color-accent); }
+.back-link:hover {
+  color: var(--color-accent);
+}
 
 /* --- Prose (articles only) --- */
 .prose {
@@ -302,8 +331,12 @@ footer {
   line-height: 1.3;
 }
 
-.prose h2 { font-size: 1.3rem; }
-.prose h3 { font-size: 1.1rem; }
+.prose h2 {
+  font-size: 1.3rem;
+}
+.prose h3 {
+  font-size: 1.1rem;
+}
 
 .prose p {
   margin-bottom: 1.4rem;
@@ -316,14 +349,18 @@ footer {
   text-underline-offset: 3px;
 }
 
-.prose a:hover { opacity: 0.8; }
+.prose a:hover {
+  opacity: 0.8;
+}
 
 .prose strong {
   font-weight: 600;
   color: var(--color-text);
 }
 
-.prose em { font-style: italic; }
+.prose em {
+  font-style: italic;
+}
 
 .prose ul,
 .prose ol {
@@ -331,8 +368,12 @@ footer {
   margin-bottom: 1.25rem;
 }
 
-.prose li { margin-bottom: 0.15rem; }
-.prose ul li::marker { color: var(--color-accent); }
+.prose li {
+  margin-bottom: 0.15rem;
+}
+.prose ul li::marker {
+  color: var(--color-accent);
+}
 
 .prose blockquote {
   border-left: 3px solid var(--color-accent);

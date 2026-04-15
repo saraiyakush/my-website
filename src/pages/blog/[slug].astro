@@ -19,18 +19,24 @@ const { Content } = await render(post);
   <a href="/writing" class="back-link">← Writing</a>
   <div class="post-header">
     <h1>{post.data.title}</h1>
-    {post.data.pubDatetime && (
-      <p class="post-meta">
-        {new Date(post.data.pubDatetime).toLocaleDateString('en-US', {
-          year: 'numeric', month: 'short', day: 'numeric'
-        })}
-      </p>
-    )}
+    {
+      post.data.pubDatetime && (
+        <p class="post-meta">
+          {new Date(post.data.pubDatetime).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          })}
+        </p>
+      )
+    }
   </div>
   <div class="prose">
-    {post.data.banner && (
-      <img src={post.data.banner} alt={post.data.title} class="post-banner" />
-    )}
+    {
+      post.data.banner && (
+        <img src={post.data.banner} alt={post.data.title} class="post-banner" />
+      )
+    }
     <Content />
   </div>
 </BaseLayout>

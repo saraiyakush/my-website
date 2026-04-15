@@ -2,12 +2,11 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-const posts = (await getCollection('blog'))
-  .sort((a, b) => {
-    const dateA = a.data.pubDatetime ? new Date(a.data.pubDatetime).getTime() : 0;
-    const dateB = b.data.pubDatetime ? new Date(b.data.pubDatetime).getTime() : 0;
-    return dateB - dateA;
-  });
+const posts = (await getCollection('blog')).sort((a, b) => {
+  const dateA = a.data.pubDatetime ? new Date(a.data.pubDatetime).getTime() : 0;
+  const dateB = b.data.pubDatetime ? new Date(b.data.pubDatetime).getTime() : 0;
+  return dateB - dateA;
+});
 
 const byYear = posts.reduce((acc, post) => {
   const year = post.data.pubDatetime
@@ -23,28 +22,35 @@ const years = Object.keys(byYear).sort((a, b) => Number(b) - Number(a));
 
 <BaseLayout title="Writing">
   <h1>Writing</h1>
-  <p>Thoughts on software design, engineering practices, career growth, and life skills.</p>
+  <p>
+    Thoughts on software design, engineering practices, career growth, and life
+    skills.
+  </p>
 
-  {years.map(year => (
-    <div class="writing-year">
-      <h2>{year}</h2>
-      <ul class="post-list">
-        {byYear[year].map(post => (
-          <li>
-            <a href={`/blog/${post.id.replace(/\.md$/, '')}`}>
-              <span>{post.data.title}</span>
-              <span class="post-date">
-                {new Date(post.data.pubDatetime).toLocaleDateString('en-US', {
-                    month: 'short', year: 'numeric', day: 'numeric'
-                })}
-              </span>
-            </a>
-            {post.data.description && (
+  {
+    years.map((year) => (
+      <div class="writing-year">
+        <h2>{year}</h2>
+        <ul class="post-list">
+          {byYear[year].map((post) => (
+            <li>
+              <a href={`/blog/${post.id.replace(/\.md$/, '')}`}>
+                <span>{post.data.title}</span>
+                <span class="post-date">
+                  {new Date(post.data.pubDatetime).toLocaleDateString('en-US', {
+                    month: 'short',
+                    year: 'numeric',
+                    day: 'numeric'
+                  })}
+                </span>
+              </a>
+              {post.data.description && (
                 <p class="post-desc">{post.data.description}</p>
-            )}
-          </li>
-        ))}
-      </ul>
-    </div>
-  ))}
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
 </BaseLayout>

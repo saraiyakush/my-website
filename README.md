@@ -35,7 +35,7 @@ Create a `.md` file in `src/content/blog/`:
 ```md
 ---
 title: Your Article Title
-pubDatetime: "2026-04-01"
+pubDatetime: '2026-04-01'
 description: One line summary.
 ---
 
