@@ -13,7 +13,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^6.1.5"
+    "@iconify-json/simple-icons": "^1.2.78",
+    "astro": "^6.1.5",
+    "astro-icon": "^1.1.5"
   },
   "devDependencies": {
     "prettier": "^3.8.3",

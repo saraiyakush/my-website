@@ -431,17 +431,37 @@ footer {
 
 /* --- Contact --- */
 .contact-links {
-  list-style: none;
-  padding-left: 0;
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-top: 1.5rem;
+  gap: 1.5rem;
+  justify-content: left;
 }
 
 .contact-links a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  min-width: 120px;
+}
+
+.contact-links a:hover {
+  border-color: var(--color-accent);
   color: var(--color-accent);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  font-size: 1rem;
+  transform: translateY(-2px);
+}
+
+.contact-links svg {
+  width: 36px;
+  height: 36px;
+}
+
+.contact-links span {
+  font-size: 0.875rem;
+  font-weight: 600;
 }

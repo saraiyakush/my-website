@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
 <BaseLayout title="Contact">
@@ -13,10 +14,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <h2>You can find me here:</h2>
 
-  <p>
-    <a href="https://linkedin.com/in/kushsaraiya" target="_blank">LinkedIn</a> · <a
-      href="https://github.com/saraiyakush"
-      target="_blank">Github</a
+  <div class="contact-links">
+    <a
+      href="https://linkedin.com/in/kushsaraiya"
+      target="_blank"
+      rel="noopener noreferrer"
     >
-  </p>
+      <Icon name="simple-icons:linkedin" />
+      <span>LinkedIn</span>
+    </a>
+    <a
+      href="https://github.com/saraiyakush"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Icon name="simple-icons:github" />
+      <span>GitHub</span>
+    </a>
+  </div>
 </BaseLayout>
