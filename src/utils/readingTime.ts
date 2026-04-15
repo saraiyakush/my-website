@@ -5,7 +5,5 @@ export function getReadingTime(content: string): number {
     .replace(/<[^>]*>/g, ''); // Remove HTML tags
 
   const words = text.trim().split(/\s+/).length;
-  const minutes = Math.ceil(words / 200);
-
-  return minutes;
+  return Math.ceil(words / 200);
 }
