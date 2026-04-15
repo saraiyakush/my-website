@@ -34,19 +34,27 @@ const years = Object.keys(byYear).sort((a, b) => Number(b) - Number(a));
         <ul class="post-list">
           {byYear[year].map((post) => (
             <li>
-              <a href={`/blog/${post.id.replace(/\.md$/, '')}`}>
-                <span>{post.data.title}</span>
-                <span class="post-date">
-                  {new Date(post.data.pubDatetime).toLocaleDateString('en-US', {
-                    month: 'short',
-                    year: 'numeric',
-                    day: 'numeric'
-                  })}
-                </span>
+              <a
+                href={`/blog/${post.id.replace(/\.md$/, '')}`}
+                class="post-link"
+              >
+                <div class="post-row">
+                  <span>{post.data.title}</span>
+                  <span class="post-date">
+                    {new Date(post.data.pubDatetime).toLocaleDateString(
+                      'en-US',
+                      {
+                        month: 'short',
+                        year: 'numeric',
+                        day: 'numeric'
+                      }
+                    )}
+                  </span>
+                </div>
+                {post.data.description && (
+                  <p class="post-desc">{post.data.description}</p>
+                )}
               </a>
-              {post.data.description && (
-                <p class="post-desc">{post.data.description}</p>
-              )}
             </li>
           ))}
         </ul>

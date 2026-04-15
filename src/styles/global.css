@@ -239,19 +239,28 @@ footer {
   border-top: 1px solid var(--color-border);
 }
 
-.post-list a {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 1rem;
+.post-list a.post-link {
+  display: block;
   padding-block: 0.875rem;
   text-decoration: none;
   color: var(--color-text);
   font-size: 0.9375rem;
 }
 
-.post-list a:hover {
+.post-list a.post-link:hover {
   color: var(--color-accent);
+}
+
+.post-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.post-list a.post-link .post-desc {
+  margin-top: 0.35rem;
+  margin-bottom: 0;
 }
 
 .post-year {
