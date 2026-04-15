@@ -215,11 +215,11 @@ footer {
 /* --- Writing list (home + writing page) --- */
 .writing-section h2,
 .writing-year h2 {
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--color-text);
   margin-top: 0;
   margin-bottom: 1rem;
 }
@@ -233,6 +233,11 @@ footer {
 .post-list li {
   border-bottom: 1px solid var(--color-border);
   margin-bottom: 0;
+  transition: transform 0.2s ease;
+}
+
+.post-list li:hover {
+  transform: scale(1.02);
 }
 
 .post-list li:first-child {
@@ -241,10 +246,9 @@ footer {
 
 .post-list a.post-link {
   display: block;
-  padding-block: 0.875rem;
+  padding-block: 1.25rem;
   text-decoration: none;
   color: var(--color-text);
-  font-size: 0.9375rem;
 }
 
 .post-list a.post-link:hover {
@@ -256,10 +260,12 @@ footer {
   justify-content: space-between;
   align-items: baseline;
   gap: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
 }
 
 .post-list a.post-link .post-desc {
-  margin-top: 0.35rem;
+  margin-top: 0.5rem;
   margin-bottom: 0;
 }
 

@@ -3,6 +3,7 @@ import '../styles/global.css';
 const { title, canonicalUrl } = Astro.props;
 const canonical =
   canonicalUrl ?? `https://kushsaraiya.com${Astro.url.pathname}`;
+const currentPath = Astro.url.pathname;
 ---
 
 <html>
@@ -24,10 +25,30 @@ const canonical =
     <nav>
       <a href="/" class="site-name">Kush Saraiya</a>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/writing">Writing</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li>
+          <a href="/" aria-current={currentPath === '/' ? 'page' : undefined}
+            >Home</a>
+        </li>
+        <li>
+          <a
+            href="/writing"
+            aria-current={currentPath.startsWith('/writing') ||
+            currentPath.startsWith('/blog')
+              ? 'page'
+              : undefined}>Writing</a>
+        </li>
+        <li>
+          <a
+            href="/about"
+            aria-current={currentPath === '/about' ? 'page' : undefined}
+            >About</a>
+        </li>
+        <li>
+          <a
+            href="/contact"
+            aria-current={currentPath === '/contact' ? 'page' : undefined}
+            >Contact</a>
+        </li>
       </ul>
     </nav>
 
