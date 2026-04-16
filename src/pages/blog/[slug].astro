@@ -17,7 +17,12 @@ const { Content } = await render(post);
 const readingTime = getReadingTime(post.body);
 ---
 
-<BaseLayout title={post.data.title} canonicalUrl={canonicalURL.toString()}>
+<BaseLayout
+  title={post.data.title}
+  canonicalUrl={canonicalURL.toString()}
+  ogImage={post.data.banner}
+  description={post.data.description}
+>
   <a href="/writing" class="back-link">← Writing</a>
   <div class="post-header">
     <h1>{post.data.title}</h1>
