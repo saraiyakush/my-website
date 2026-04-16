@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
 import icon from 'astro-icon';
 
+import sitemap from '@astrojs/sitemap';
+
 export default defineConfig({
   site: 'https://kushsaraiya.com',
   markdown: {
@@ -8,5 +10,5 @@ export default defineConfig({
       theme: 'one-light'
     }
   },
-  integrations: [icon()]
+  integrations: [icon(), sitemap()]
 });
