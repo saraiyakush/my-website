@@ -12,6 +12,19 @@ const blog = defineCollection({
   })
 });
 
+const talks = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/talks' }),
+  schema: z.object({
+    title: z.string(),
+    talkDate: z.string(),
+    description: z.string().optional(),
+    youtubeId: z.string().optional(),
+    event: z.string().optional(),
+    tags: z.array(z.string()).optional()
+  })
+});
+
 export const collections = {
-  blog
+  blog,
+  talks
 };

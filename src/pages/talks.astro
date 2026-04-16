@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const talks = (await getCollection('talks')).sort((a, b) => {
+  const dateA = a.data.talkDate ? new Date(a.data.talkDate).getTime() : 0;
+  const dateB = b.data.talkDate ? new Date(b.data.talkDate).getTime() : 0;
+  return dateB - dateA;
+});
+
+const byYear = talks.reduce((acc, talk) => {
+  const year = talk.data.talkDate
+    ? new Date(talk.data.talkDate).getFullYear().toString()
+    : 'Undated';
+  if (!acc[year]) acc[year] = [];
+  acc[year].push(talk);
+  return acc;
+}, {});
+
+const years = Object.keys(byYear).sort((a, b) => Number(b) - Number(a));
+---
+
+<BaseLayout title="Talks">
+  <h1>Talks</h1>
+  <p>Sessions and talks I've delivered at conferences, meetups, and events.</p>
+
+  {
+    years.map((year) => (
+      <div class="writing-year">
+        <h2>{year}</h2>
+        <div class="talks-list">
+          {byYear[year].map((talk) => {
+            return (
+              <div class="talk-item">
+                {talk.data.youtubeId && (
+                  <div class="video-container">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${talk.data.youtubeId}`}
+                      title={talk.data.title}
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    />
+                  </div>
+                )}
+                <div class="talk-details">
+                  <h3>{talk.data.title}</h3>
+                  {talk.data.event && (
+                    <p class="talk-event">{talk.data.event}</p>
+                  )}
+                  <span class="post-date">
+                    {new Date(talk.data.talkDate).toLocaleDateString('en-US', {
+                      month: 'short',
+                      year: 'numeric',
+                      day: 'numeric'
+                    })}
+                  </span>
+                  {talk.data.description && (
+                    <p class="talk-desc">{talk.data.description}</p>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    ))
+  }
+</BaseLayout>
