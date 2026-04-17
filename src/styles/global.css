@@ -212,6 +212,45 @@ footer {
 }
 
 /* --- Writing list (home + writing page) --- */
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.section-header h1,
+.section-header h2 {
+  margin-bottom: 0;
+}
+
+.rss-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  text-decoration: none;
+  line-height: 1;
+}
+
+.rss-link svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.rss-link:hover {
+  opacity: 0.7;
+}
+
 .writing-section h2,
 .writing-year h2 {
   font-size: 0.875rem;

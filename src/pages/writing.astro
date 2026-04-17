@@ -22,11 +22,21 @@ const years = Object.keys(byYear).sort((a, b) => Number(b) - Number(a));
 ---
 
 <BaseLayout title="Writing">
-  <h1>Writing</h1>
+  <div class="section-header">
+    <h1>Writing</h1>
+  </div>
   <p>
     Thoughts on software design, engineering practices, career growth, and life
     skills.
   </p>
+
+  <a href="/rss.xml" class="rss-link" aria-label="RSS Feed" target="_blank">
+    <span>RSS</span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      ><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"
+      ></path><circle cx="5" cy="19" r="1"></circle></svg
+    >
+  </a>
 
   {
     years.map((year) => (
