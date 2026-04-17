@@ -14,6 +14,8 @@ const fullOgImage = ogImage ? `https://kushsaraiya.com${ogImage}` : null;
       {title === 'Kush Saraiya' ? title : `${title} | Kush Saraiya`}
     </title>
     <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Kush Saraiya" />
     <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />
     {description && <meta property="og:description" content={description} />}

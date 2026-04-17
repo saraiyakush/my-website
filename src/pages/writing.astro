@@ -21,7 +21,10 @@ const byYear = posts.reduce((acc, post) => {
 const years = Object.keys(byYear).sort((a, b) => Number(b) - Number(a));
 ---
 
-<BaseLayout title="Writing">
+<BaseLayout
+  title="Writing"
+  description="Thoughts on software design, engineering practices, career growth, and life skills"
+>
   <div class="section-header">
     <h1>Writing</h1>
   </div>

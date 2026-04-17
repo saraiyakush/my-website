@@ -20,7 +20,10 @@ const byYear = talks.reduce((acc, talk) => {
 const years = Object.keys(byYear).sort((a, b) => Number(b) - Number(a));
 ---
 
-<BaseLayout title="Talks">
+<BaseLayout
+  title="Talks"
+  description="Conference talks and presentations on software engineering and architecture"
+>
   <h1>Talks</h1>
   <p>Sessions and talks I've delivered at conferences, meetups, and events.</p>
 
