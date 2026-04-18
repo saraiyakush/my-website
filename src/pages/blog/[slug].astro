@@ -15,6 +15,33 @@ const { post } = Astro.props;
 const canonicalURL = new URL(`/blog/${Astro.params.slug}`, Astro.site);
 const { Content } = await render(post);
 const readingTime = getReadingTime(post.body);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  author: {
+    '@type': 'Person',
+    name: 'Kush Saraiya',
+    url: 'https://kushsaraiya.com'
+  },
+  datePublished: post.data.pubDatetime,
+  dateModified: post.data.modDatetime || post.data.pubDatetime,
+  image: post.data.banner
+    ? `https://kushsaraiya.com${post.data.banner}`
+    : undefined,
+  url: canonicalURL.toString(),
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': canonicalURL.toString()
+  },
+  publisher: {
+    '@type': 'Person',
+    name: 'Kush Saraiya',
+    url: 'https://kushsaraiya.com'
+  }
+};
 ---
 
 <BaseLayout
@@ -22,6 +49,7 @@ const readingTime = getReadingTime(post.body);
   canonicalUrl={canonicalURL.toString()}
   ogImage={post.data.banner}
   description={post.data.description}
+  schema={schema}
 >
   <a href="/writing" class="back-link">← Writing</a>
   <div class="post-header">
