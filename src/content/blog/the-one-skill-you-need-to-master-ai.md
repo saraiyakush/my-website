@@ -57,7 +57,7 @@ See the difference? In the second version you didn't just ask for code. You've:
 ✅ Specified outcomes (order ID, timestamp, future extensibility)  
 ✅ Imposed boundaries (exclude auth, payments, inventory)
 
-The result is not just a working code, but a code aligns with the product's real needs.
+The result is not just a working code, but a code that aligns with the product's real needs.
 
 - Good prompt → focusses on the task.
 - Great prompt → connects the task to the product context and desired outcome and can use this context to make decisions for itself.
