@@ -1,5 +1,5 @@
 ---
-title: Unit Testing Isn't About Structure. It's About Behaviour — AI Will Learn Whatever You Practice.
+title: Unit Testing Isn't About Structure. It's About Behaviour — AI Will Learn Whatever You Practice
 pubDatetime: '2026-04-23'
 description: The way you practise TDD today is what AI will reproduce tomorrow. Many teams write tests that follow structure instead of behaviour — reinforcing design instead of shaping it. This article shows what effective TDD actually looks like, and why getting it right matters more than ever.
 banner: '/images/tdd-ai.jpg'
