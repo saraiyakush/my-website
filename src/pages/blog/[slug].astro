@@ -66,6 +66,15 @@ const schema = {
         </p>
       )
     }
+    {
+      post.data.tags && post.data.tags.length > 0 && (
+        <div class="post-tags">
+          {post.data.tags.map((tag) => (
+            <span class="tag">{tag}</span>
+          ))}
+        </div>
+      )
+    }
   </div>
   <div class="prose">
     {

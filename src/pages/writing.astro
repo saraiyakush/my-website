@@ -71,6 +71,13 @@ const years = Object.keys(byYear).sort((a, b) => Number(b) - Number(a));
                   {post.data.description && (
                     <p class="post-desc">{post.data.description}</p>
                   )}
+                  {post.data.tags && post.data.tags.length > 0 && (
+                    <div class="post-tags">
+                      {post.data.tags.slice(0, 3).map((tag) => (
+                        <span class="tag">{tag}</span>
+                      ))}
+                    </div>
+                  )}
                 </a>
               </li>
             );
