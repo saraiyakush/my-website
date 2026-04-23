@@ -475,9 +475,9 @@ footer {
 }
 
 .prose pre {
-  background: #f5f0eb;
+  background: #f0ebe5;
   color: #1f2933;
-  border: 1px solid var(--color-border);
+  border: 2px solid #c4b5a3;
   border-radius: 6px;
   padding: 1rem;
   overflow-x: auto;
