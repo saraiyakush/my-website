@@ -163,6 +163,12 @@ nav ul {
   align-items: center;
 }
 
+@media (max-width: 640px) {
+  nav ul {
+    gap: 1rem;
+  }
+}
+
 nav ul a {
   font-size: 0.9375rem;
   color: var(--color-accent);
