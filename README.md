@@ -37,6 +37,7 @@ Create a `.md` file in `src/content/blog/`:
 title: Your Article Title
 pubDatetime: '2026-04-01'
 description: One line summary.
+banner: '/images/file'
 ---
 
 Your content here.
@@ -44,7 +45,7 @@ Your content here.
 
 ## Deploying
 
-Push to GitHub. Cloudflare Pages or GitHub Pages builds automatically.
+Push to GitHub. Cloudflare Pages builds automatically.
 
 ## License
 
