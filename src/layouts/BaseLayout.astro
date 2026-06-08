@@ -4,6 +4,7 @@ const { title, canonicalUrl, ogImage, description, schema } = Astro.props;
 const canonical =
   canonicalUrl ?? `https://kushsaraiya.com${Astro.url.pathname}`;
 const fullOgImage = ogImage ? `https://kushsaraiya.com${ogImage}` : null;
+const currentPath = Astro.url.pathname;
 ---
 
 <html>
@@ -80,22 +81,19 @@ const fullOgImage = ogImage ? `https://kushsaraiya.com${ogImage}` : null;
       <a href="/" class="site-name">Kush Saraiya</a>
       <ul>
         <li>
-          <a href="/">Home</a>
+          <a href="/writing" aria-current={currentPath.startsWith('/writing') || currentPath.startsWith('/blog') ? 'page' : undefined}>Writing</a>
         </li>
         <li>
-          <a href="/writing">Writing</a>
+          <a href="/talks" aria-current={currentPath.startsWith('/talks') ? 'page' : undefined}>Talks</a>
         </li>
         <li>
-          <a href="/talks">Talks</a>
+          <a href="/experience" aria-current={currentPath.startsWith('/experience') ? 'page' : undefined}>Experience</a>
         </li>
         <li>
-          <a href="/experience">Experience</a>
+          <a href="/about" aria-current={currentPath.startsWith('/about') ? 'page' : undefined}>About</a>
         </li>
         <li>
-          <a href="/about">About</a>
-        </li>
-        <li>
-          <a href="/contact">Contact</a>
+          <a href="/contact" aria-current={currentPath.startsWith('/contact') ? 'page' : undefined}>Contact</a>
         </li>
         <li>
           <button id="theme-toggle" aria-label="Toggle dark mode">

@@ -179,6 +179,10 @@ nav ul a:hover {
   color: var(--color-muted);
 }
 
+nav ul a[aria-current='page'] {
+  color: var(--color-text);
+}
+
 #theme-toggle {
   background: none;
   border: none;
