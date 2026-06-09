@@ -315,7 +315,7 @@ AI is the new shiny thing the industry is chasing. It won't always be. Something
 
 What will remain constant is the **methodology** of doing things.
 
-AI is trained on datasets — **not on the journey** of how those datasets were created. It has _seen_ the artifact (the tests, the code) but not the reasoning behind each micro-decision in the Red-Green-Refactor loop. _It learned the pattern, not the judgment_.
+AI is trained on datasets — **not on the journey** of how those datasets were created. It has _seen_ the artifact (the tests, the code) but not the reasoning behind each micro-decision in the Red-Green-Refactor loop. _It learned the pattern, not the judgement_.
 
 So it is _you_ who needs to instruct AI on the methodology, and you can do that only if you've learned and lived those methodologies yourself.
 
