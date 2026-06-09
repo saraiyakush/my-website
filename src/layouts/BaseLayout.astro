@@ -81,19 +81,43 @@ const currentPath = Astro.url.pathname;
       <a href="/" class="site-name">Kush Saraiya</a>
       <ul>
         <li>
-          <a href="/writing" aria-current={currentPath.startsWith('/writing') || currentPath.startsWith('/blog') ? 'page' : undefined}>Writing</a>
+          <a
+            href="/writing"
+            aria-current={currentPath.startsWith('/writing') ||
+            currentPath.startsWith('/blog')
+              ? 'page'
+              : undefined}>Writing</a
+          >
         </li>
         <li>
-          <a href="/talks" aria-current={currentPath.startsWith('/talks') ? 'page' : undefined}>Talks</a>
+          <a
+            href="/talks"
+            aria-current={currentPath.startsWith('/talks') ? 'page' : undefined}
+            >Talks</a
+          >
         </li>
         <li>
-          <a href="/experience" aria-current={currentPath.startsWith('/experience') ? 'page' : undefined}>Experience</a>
+          <a
+            href="/experience"
+            aria-current={currentPath.startsWith('/experience')
+              ? 'page'
+              : undefined}>Experience</a
+          >
         </li>
         <li>
-          <a href="/about" aria-current={currentPath.startsWith('/about') ? 'page' : undefined}>About</a>
+          <a
+            href="/about"
+            aria-current={currentPath.startsWith('/about') ? 'page' : undefined}
+            >About</a
+          >
         </li>
         <li>
-          <a href="/contact" aria-current={currentPath.startsWith('/contact') ? 'page' : undefined}>Contact</a>
+          <a
+            href="/contact"
+            aria-current={currentPath.startsWith('/contact')
+              ? 'page'
+              : undefined}>Contact</a
+          >
         </li>
         <li>
           <button id="theme-toggle" aria-label="Toggle dark mode">
