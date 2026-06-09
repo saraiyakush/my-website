@@ -258,14 +258,25 @@ footer {
 .hero-tagline {
   font-size: 2.25rem;
   line-height: 1.25;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   font-weight: 700;
   color: var(--color-text);
 }
 
 .hero-tagline .highlight {
   color: var(--color-accent);
-  position: relative;
+}
+
+.hero-sub {
+  font-size: 1.25rem;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.hero-domain {
+  font-size: 1.125rem;
+  color: var(--color-muted);
+  margin-bottom: 0;
 }
 
 .hero-links {
@@ -300,12 +311,6 @@ footer {
   font-size: 2.25rem;
   line-height: 1.25;
   margin-bottom: 0.75rem;
-}
-
-.hero-sub {
-  font-size: 1.0625rem;
-  color: var(--color-muted);
-  margin-bottom: 0;
 }
 
 .post-date {
