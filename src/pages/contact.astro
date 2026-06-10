@@ -7,38 +7,50 @@ import { Icon } from 'astro-icon/components';
   title="Contact"
   description="Get in touch for thoughtful conversations about software, architecture, and engineering"
 >
-  <h2>Open to thoughtful conversations</h2>
-
+  <h1>Contact</h1>
   <p>
-    Whether you're navigating complex technical decisions, thinking beyond
-    implementation in system design, exploring engineering growth, or reflecting
-    on technology and its real-world impact — feel free to reach out.
+    Whether you're navigating complex technical decisions, thinking about
+    engineering culture, or just want to talk shop—I'm interested.
   </p>
 
-  <p>I typically respond within 24-48 hours.</p>
+  <h2>You can find me here</h2>
 
-  <h2>You can find me here:</h2>
-
-  <div class="contact-links">
-    <a href="mailto:hello@kushsaraiya.com">
+  <div class="contact-grid">
+    <a href="mailto:hello@kushsaraiya.com" class="contact-card">
       <Icon name="mdi:email-outline" />
-      <span>Email</span>
+      <div class="contact-card-content">
+        <span class="contact-card-label">Email</span>
+        <span class="contact-card-value">hello@kushsaraiya.com</span>
+        <span class="contact-card-note">Best for detailed discussions</span>
+      </div>
     </a>
     <a
       href="https://linkedin.com/in/kushsaraiya"
       target="_blank"
       rel="noopener noreferrer"
+      class="contact-card"
     >
       <Icon name="mdi:linkedin" />
-      <span>LinkedIn</span>
+      <div class="contact-card-content">
+        <span class="contact-card-label">LinkedIn</span>
+        <span class="contact-card-value">/in/kushsaraiya</span>
+        <span class="contact-card-note">Professional connections</span>
+      </div>
     </a>
     <a
       href="https://github.com/saraiyakush"
       target="_blank"
       rel="noopener noreferrer"
+      class="contact-card"
     >
       <Icon name="mdi:github" />
-      <span>GitHub</span>
+      <div class="contact-card-content">
+        <span class="contact-card-label">GitHub</span>
+        <span class="contact-card-value">@saraiyakush</span>
+        <span class="contact-card-note">Code & contributions</span>
+      </div>
     </a>
   </div>
+
+  <p class="contact-response-note">I typically respond within 24-48 hours.</p>
 </BaseLayout>

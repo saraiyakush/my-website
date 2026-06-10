@@ -34,7 +34,7 @@ const posts = (await getCollection('blog'))
 
   <div class="writing-section">
     <div class="section-header">
-      <h2>Latest articles</h2>
+      <h2 class="section-label">Recent thinking</h2>
       <a href="/rss.xml" class="rss-link" aria-label="RSS Feed" target="_blank">
         <span>RSS</span>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -80,4 +80,8 @@ const posts = (await getCollection('blog'))
     </ul>
     <a href="/writing" class="all-writing-link">All articles →</a>
   </div>
+
+  <p class="cta-plain">
+    Working on something complex? <a href="/contact">Let's talk →</a>
+  </p>
 </BaseLayout>

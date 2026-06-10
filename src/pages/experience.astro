@@ -1,77 +1,144 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+const highlights = [
+  {
+    metric: '30 min',
+    context: 'Lead time for change',
+    detail: 'Built CI/CD for greenfield integration platform'
+  },
+  {
+    metric: '3 weeks',
+    context: 'Java 7→17 migration',
+    detail: 'Across 100+ services using AI-assisted workflows'
+  },
+  {
+    metric: '8 months',
+    context: 'Zero to AWS Select Partner',
+    detail: '10 engineers certified, 4 requirements owned end-to-end'
+  },
+  {
+    metric: '75%',
+    context: 'Infrastructure cost cut',
+    detail: 'Via architectural redesign'
+  }
+];
+
 const experiences = [
   {
-    company: 'Technogise, Pune',
+    company: 'Technogise',
+    location: 'Pune',
     role: 'Lead Technology Consultant',
     period: 'Jan 2022 - Present',
+    type: 'current',
+    summary:
+      'Operating at the intersection of client delivery and company growth — driving platform outcomes, shaping engineering direction, and influencing capability company-wide.',
     achievements: [
       'Designed and delivered the CI/CD, observability, and operational tooling for a greenfield multi-market vendor integration platform, reducing lead time for change to 30 minutes while maintaining a change failure rate below 10%.',
       'Spearheaded large-scale Java 7 to Java 17 migration across 100+ services by leveraging AI-assisted workflows and containerisation, completing in 3 weeks instead of months.',
       'Introduced and scaled pragmatic XP practices (TDD, BDD) across 35 engineers and 4 teams, establishing consistent quality and testing standards.',
-      "Led the initiative that secured Technogise's first AWS Partnership badge within 8 months by creating the certification programme, operational model, and budget framework that enabled 10 engineers to achieve AWS certifications."
+      "Took Technogise from zero to AWS Select Partner in 8 months — no prior playbook, no dedicated team — getting 10 engineers certified, meeting all 4 partnership requirements, and establishing the company's first cloud partnership credential."
     ]
   },
   {
-    company: 'xEnabler, Pune',
+    company: 'xEnabler',
+    location: 'Pune',
     role: 'Engineering Manager',
     period: 'Jan 2021 - Jan 2022',
+    type: 'past',
+    summary:
+      'First engineering management role. Drove DevOps transformation and established engineering practices across multiple teams.',
     achievements: [
-      'Introduced engineering practices such as TDD and CI/CD for backend teams of 15 engineers, enabling shift-left testing and reducing escaped defects by 60%.',
+      'Introduced TDD and CI/CD for backend teams of 15 engineers, enabling shift-left testing and reducing escaped defects by 60%.',
       'Drove DevOps transformation initiatives across 3 projects, standardising deployment across engineering teams.'
     ]
   },
   {
-    company: 'Infosys Limited, Pune & USA',
+    company: 'Infosys Limited',
+    location: 'Pune & USA',
     role: 'Technology Lead',
     period: 'Feb 2012 - Jan 2021',
+    type: 'past',
+    summary:
+      'Nearly a decade of growth from senior developer to technical lead. Enterprise systems, performance optimisation, and architectural decisions.',
     achievements: [
       'Reduced infrastructure costs by 75% through architectural redesign of compliance workflows.',
       'Delivered a fault-tolerant batch processing system, reducing recurring production incidents from 3 per month to 0.'
     ]
   },
   {
-    company: 'Tata Consultancy Services, Ahmedabad',
+    company: 'Tata Consultancy Services',
+    location: 'Ahmedabad',
     role: 'Systems Engineer',
     period: 'Jul 2008 - Jan 2012',
+    type: 'past',
+    summary:
+      'Where it all started. Government applications, enterprise development, and the foundations of software craftsmanship.',
     achievements: [
       'Developed enterprise applications for Government of Cardiff and Government of Gujarat.',
       'Built internal utility frameworks to improve consistency and reduce boilerplate.',
-      'Progressed to Module Lead, owning end-to-end SDLC.',
-      "Nominated for 'Employee Star of the Month' (Dec 2010)."
+      'Progressed to Module Lead, owning end-to-end SDLC.'
     ]
   }
 ];
 ---
 
-<BaseLayout title="Experience">
+<BaseLayout
+  title="Experience"
+  description="17+ years across distributed systems, platform engineering, and team development. From systems engineer to lead consultant."
+>
   <h1>Experience</h1>
   <p>
-    From systems engineer to lead consultant — 17+ years across distributed
-    systems, platform engineering, and team development.
+    17 years of building things that matter — from first enterprise application
+    to leading platform transformations, on the belief that great software comes
+    from great decisions, not just great code.
   </p>
-  <div class="timeline">
+
+  <div class="exp-highlights">
+    <h2 class="section-label">Impact highlights</h2>
+    <div class="highlight-grid">
+      {
+        highlights.map((h) => (
+          <div class="highlight-card">
+            <span class="highlight-metric">{h.metric}</span>
+            <span class="highlight-context">{h.context}</span>
+            <span class="highlight-detail">{h.detail}</span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="exp-timeline">
+    <h2 class="section-label">The journey</h2>
     {
       experiences.map((exp) => (
-        <div class="timeline-item">
-          <div class="timeline-marker" />
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <div>
-                <h2>{exp.role}</h2>
-                <h3>{exp.company}</h3>
-              </div>
-              <span class="timeline-date">{exp.period}</span>
+        <div class={`exp-card ${exp.type}`}>
+          <div class="exp-card-header">
+            <div class="exp-card-title">
+              <h3>{exp.role}</h3>
+              <span class="exp-company">
+                {exp.company} · {exp.location}
+              </span>
             </div>
-            <ul>
-              {exp.achievements.map((achievement) => (
-                <li>{achievement}</li>
-              ))}
-            </ul>
+            <span class="exp-period">{exp.period}</span>
           </div>
+          <p class="exp-summary">{exp.summary}</p>
+          <ul class="exp-achievements">
+            {exp.achievements.map((achievement) => (
+              <li>{achievement}</li>
+            ))}
+          </ul>
         </div>
       ))
     }
+  </div>
+
+  <div class="exp-cta">
+    <p>
+      Want the full CV or to discuss opportunities? <a href="/contact"
+        >Get in touch</a
+      >.
+    </p>
   </div>
 </BaseLayout>

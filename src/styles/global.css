@@ -8,34 +8,51 @@
   --font-ui: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   --font-prose: 'Source Serif 4', Georgia, serif;
 
-  --color-bg: #fafaf9;
-  --color-text: #1f2933;
-  --color-muted: #57606a;
-  --color-border: #e1e4e8;
-  --color-accent: #c2622a;
+  --color-bg: #faf9f7;
+  --color-surface: #ffffff;
+  --color-text: #1a1a1a;
+  --color-muted: #5c6370;
+  --color-border: #e5e5e5;
+  --color-accent: #c45d2c;
+  --color-accent-light: #fff5f0;
+  --color-accent-hover: #a84d24;
 
-  --code-bg: #f0ebe5;
-  --code-border: #c4b5a3;
-  --inline-code-bg: #fff3ee;
-  --tag-bg: #e8eaed;
-  --tag-text: #6b7280;
+  --code-bg: #f5f2ef;
+  --code-border: #d4ccc3;
+  --inline-code-bg: #fff5f0;
+  --tag-bg: #f0f0f0;
+  --tag-text: #666666;
 
   --width-content: min(900px, 92vw);
   --space-page: 1.5rem;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
 }
 
 [data-theme='dark'] {
   --color-bg: #1a1d23;
-  --color-text: #d1d4d7;
-  --color-muted: #a8adb5;
-  --color-border: #2d3139;
+  --color-surface: #22262f;
+  --color-text: #e4e4e7;
+  --color-muted: #9ca3af;
+  --color-border: #2a2e36;
   --color-accent: #e8956f;
+  --color-accent-light: #2a2520;
+  --color-accent-hover: #f0a882;
 
-  --code-bg: #282c34;
-  --code-border: #3a3f4a;
-  --inline-code-bg: #2a2d35;
-  --tag-bg: #2a2e36;
-  --tag-text: #7d8490;
+  --code-bg: #1e2128;
+  --code-border: #2d3139;
+  --inline-code-bg: #252830;
+  --tag-bg: #252830;
+  --tag-text: #9ca3af;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 /* --- Reset --- */
@@ -239,11 +256,33 @@ footer {
   text-align: center;
 }
 
+.about-cta p {
+  color: var(--color-muted);
+  margin: 0;
+}
+
 /* --- Home page --- */
 .hero {
   margin-bottom: 4rem;
   padding-bottom: 3rem;
   border-bottom: 1px solid var(--color-border);
+}
+
+.section-label {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.cta-plain {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
 }
 
 .hero-name {
@@ -392,14 +431,15 @@ footer {
 }
 
 .writing-section h2,
-.writing-year h2 {
-  font-size: 0.875rem;
+.writing-year h2,
+.section-label {
+  font-size: 0.8125rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-accent);
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .post-list {
@@ -635,6 +675,69 @@ footer {
 }
 
 /* --- Contact --- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  text-decoration: none;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+.contact-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.contact-card svg {
+  width: 28px;
+  height: 28px;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.contact-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.contact-card-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-muted);
+}
+
+.contact-card-value {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.contact-card-note {
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+}
+
+.contact-response-note {
+  font-size: 0.9375rem;
+  color: var(--color-muted);
+}
+
 .contact-links {
   display: flex;
   gap: 1.5rem;
@@ -777,6 +880,139 @@ footer {
 }
 
 /* --- Experience Timeline --- */
+.exp-highlights {
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.highlight-card {
+  padding: 1.25rem;
+  background: var(--color-accent-light);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.highlight-metric {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.highlight-context {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.highlight-detail {
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+  margin-top: 0.25rem;
+}
+
+.exp-timeline {
+  margin-bottom: 3rem;
+}
+
+.exp-card {
+  padding: 1.5rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+  transition: border-color 0.2s ease;
+}
+
+.exp-card:last-child {
+  margin-bottom: 0;
+}
+
+.exp-card.current {
+  border-left: 3px solid var(--color-accent);
+}
+
+.exp-card:hover {
+  border-color: var(--color-accent);
+}
+
+.exp-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.exp-card-title h3 {
+  font-size: 1.125rem;
+  color: var(--color-text);
+  margin: 0 0 0.25rem 0;
+}
+
+.exp-company {
+  font-size: 0.9375rem;
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.exp-period {
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+.exp-summary {
+  font-size: 0.9375rem;
+  color: var(--color-muted);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.exp-achievements {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.exp-achievements li {
+  font-size: 0.9375rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.exp-achievements li:last-child {
+  margin-bottom: 0;
+}
+
+.exp-cta {
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.exp-cta p {
+  color: var(--color-muted);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .exp-card-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .highlight-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .timeline {
   position: relative;
   padding-left: 2rem;
